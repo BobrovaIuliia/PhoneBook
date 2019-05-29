@@ -134,7 +134,7 @@ export class AddContactModalDialogComponent implements OnInit {
     let reader = new FileReader();
 
     reader.onload = (e)=>{
-      this.photoPreview.nativeElement.querySelector('img', '.photo-preview').setAttribute('src', e.target.result);
+      this.photoPreview.nativeElement.querySelector('img', '.photo-preview').setAttribute('src', reader.result);
     }
     reader.readAsDataURL(file);
   }
