@@ -11,9 +11,9 @@
 }
 
 .contact-photo {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
   margin-left: auto;
   margin-right: auto;
   background: blanchedalmond;
@@ -23,4 +23,10 @@
 .list-group {
   width: 100%;
 
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 75px;
 }

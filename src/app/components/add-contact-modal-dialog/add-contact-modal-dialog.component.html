@@ -48,6 +48,16 @@
       </li>
 
       <li class="list-group-item">
+          <div class="upload-btn-wrapper">
+              <button class="upload-btn">Upload a file</button>
+              <input type="file" name="myfile" (change)="importFile($event)"/>
+              <div #photoPreview class="load-photo-box">
+              <img  id="photo-preview" src="" alt="" />
+              </div>
+            </div>
+      </li>
+
+      <li class="list-group-item">
         <button type="button" class="btn btn-outline-primary dialog-btn" (click)="closeDialogeWindow()">Cancel</button>
         <button *ngIf="isAddContact" type="button" class="btn btn-primary dialog-btn"
           (click)="addContact()">Add</button>

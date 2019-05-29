@@ -1,6 +1,8 @@
 <div *ngIf="contactInfo">
   <div class="contact-general-inf">
-    <div class="contact-photo"></div>
+    <div class="contact-photo">
+      <img id="img-preview" src="{{contactInfo.photo}}" alt="" />
+    </div>
   </div>
   <div class="contact-inf">
     <ul class="list-group">

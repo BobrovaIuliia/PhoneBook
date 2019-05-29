@@ -9,6 +9,7 @@ import { ContactsService } from 'src/app/services/contacts.service';
 export class ContactItemComponent implements OnInit {
 
   @Input() item: string;
+  
   @Output() onSelect = new EventEmitter<number>();
   @Output() onRemove = new EventEmitter<number>();
   @Output() onEdit = new EventEmitter<number>();
@@ -19,7 +20,6 @@ export class ContactItemComponent implements OnInit {
   }
 
   private selectContact(target): void {
-    console.log(target.parentNode);
     this.onSelect.emit(target.parentNode.id);
   }
 

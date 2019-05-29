@@ -4,17 +4,19 @@ export class Contact {
     phone: [];
     email: string;
     birthday: Date;
+    photo: string;
 
     constructor(id: number,
         fio: string,
         email: string,
         birthday: Date,
-        phone: []) {
+        phone: [],
+        photo: string) {
         this.id = id;
         this.fio = fio;
         this.email = email;
         this.birthday = birthday;
         this.phone = phone;
-
+        this.photo=photo;
     }
 }

@@ -29,7 +29,6 @@ export class MainPageComponent implements OnInit {
   }
 
   private editContact(event) {
-    console.log(event);
     this.contactEditParams = this.contactsService.getContact(event)
     this.isModalDialogVisible = true;
     this.isAddContact = false;

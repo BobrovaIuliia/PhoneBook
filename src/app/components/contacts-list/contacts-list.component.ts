@@ -10,13 +10,13 @@ import { Contact } from 'src/app/classes/contact';
 })
 export class ContactsListComponent implements OnInit, OnChanges {
 
-  //private isModalDialogVisible:boolean=true;
   private contacts = [];
   private searchString: string;
   term$ = new Subject<string>();
 
   @Output() selectContact = new EventEmitter<number>();
   @Output() editContact = new EventEmitter<number>();
+
   @Input() isModalDialogVisible: boolean;
 
 

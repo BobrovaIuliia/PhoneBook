@@ -20,24 +20,26 @@ export class ContactsService {
     }
   }
 
-  public addContact(fio: string, email: string, birthday: Date, phones: any): void {
-    let contact = new Contact(this.nextId, fio, email, birthday, phones);
+  public addContact(fio: string, email: string, birthday: Date, phones: any,photo:string): void {
+    let contact = new Contact(this.nextId, fio, email, birthday, phones,photo);
+    //console.log(contact);
     let contacts = this.getContacts();
     contacts.push(contact);
-
+    //console.log(contacts);
     this.setLocalStorageContacts(contacts);
 
     this.nextId++;
   }
 
-  public editContact(id: number, fio: string, email: string, birthday: Date, phones: any): void {
+  public editContact(id: number, fio: string, email: string, birthday: Date, phones: any,photo:string): void {
     let contacts = this.getContacts();
     let contactIndex = contacts.findIndex((contact => contact.id == id));
     contacts[contactIndex].fio = fio;
     contacts[contactIndex].email = email;
     contacts[contactIndex].birthday = birthday;
     contacts[contactIndex].phone = phones;
-
+    contacts[contactIndex].photo = photo;
+//console.log(contacts[contactIndex].photo);
     this.setLocalStorageContacts(contacts);
   }
 
