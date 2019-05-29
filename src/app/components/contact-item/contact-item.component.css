@@ -1,0 +1,21 @@
+.contact-item {
+  height: 80px;
+  border-color: lightslategray;
+  border: 1px solid white;
+  box-shadow: 1px 3px 13px -8px #000000;
+  margin-top: 3px;
+}
+
+.picture {
+  background: grey;
+}
+
+.item {
+  text-align: center;
+  width: 100%;
+  pointer-events: none;
+}
+
+button{
+    margin-right: 5px;
+}

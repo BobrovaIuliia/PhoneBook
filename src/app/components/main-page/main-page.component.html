@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="content">
+    <div class="row content-header">
+      <app-header></app-header>
+    </div>
+    <div class="row ">
+      <div class="col-sm-6 contacts-list">
+        <h4>Contacts list</h4>
+        <app-contacts-list [isModalDialogVisible]="isModalDialogVisible" (editContact)="editContact($event)"
+          (selectContact)="selectContact($event)"></app-contacts-list>
+        <app-add-contact-button (openModalDialoge)="openModalDialoge($event)"></app-add-contact-button>
+      </div>
+      <div class="col-sm-6 contact-info">
+        <app-contact-info [contactInfo]="contactInfo"></app-contact-info>
+      </div>
+    </div>
+  </div>
+  <div class="modal-dialog">
+    <app-add-contact-modal-dialog *ngIf="isModalDialogVisible" [contactEditParams]="contactEditParams"
+      [isAddContact]="isAddContact" (closeModalDialoge)="closeModalDialoge()"></app-add-contact-modal-dialog>
+  </div>
+</div>

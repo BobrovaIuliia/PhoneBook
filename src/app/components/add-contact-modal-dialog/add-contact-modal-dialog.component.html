@@ -1,0 +1,60 @@
+<div class="modal-content">
+  <div class="modal-body">
+
+    <ul class="list-group">
+
+      <li class="list-group-item active">
+        <div class="form-group">
+          <label>Contact's name</label>
+          <input type="text" class="form-control" [(ngModel)]="inputFio" value={{inputFio}}
+            placeholder="Enter contact's name">
+        </div>
+      </li>
+
+      <li class="list-group-item">
+        <div class="form-group">
+          <label>Email address</label>
+          <input type="text" class="form-control" [(ngModel)]="inputEmail" value={{inputEmail}}
+            placeholder="Enter email">
+        </div>
+      </li>
+
+      <li class="list-group-item">
+        <div class="form-group">
+          <label>Birthday</label>
+          <div>
+            <p-calendar [(ngModel)]="inputBirhday" placeholder="dd.mm.yyyy" dateFormat="dd.mm.yy">
+            </p-calendar>
+          </div>
+        </div>
+      </li>
+
+      <li class="list-group-item">
+        <form [formGroup]="myForm">
+          <div formArrayName="phones">
+            <label>Phone number</label>
+            <div *ngFor="let phone of phoneForms.controls; let i=index" [formGroupName]="i">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" formControlName="number" placeholder="Enter phone"
+                  aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" (click)="deletePhone(i)">X</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-secondary" (click)="addPhone()">Add new phone</button>
+        </form>
+      </li>
+
+      <li class="list-group-item">
+        <button type="button" class="btn btn-outline-primary dialog-btn" (click)="closeDialogeWindow()">Cancel</button>
+        <button *ngIf="isAddContact" type="button" class="btn btn-primary dialog-btn"
+          (click)="addContact()">Add</button>
+        <button *ngIf="!isAddContact" type="button" class="btn btn-primary dialog-btn"
+          (click)="editContact()">Edit</button>
+      </li>
+    </ul>
+
+  </div>
+</div>

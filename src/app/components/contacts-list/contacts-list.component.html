@@ -1,0 +1,9 @@
+<div class="row form-group">
+  <input type="text" class="form-control search" (input)="term$.next($event.target.value)" [(ngModel)]="searchString"
+    value={{searchString}} placeholder="Search">
+</div>
+<div *ngFor="let contact of contacts">
+  <app-contact-item [item]=contact (onSelect)="onSelect($event)" (onRemove)="onRemove($event)"
+    (onEdit)="onEdit($event)">
+  </app-contact-item>
+</div>

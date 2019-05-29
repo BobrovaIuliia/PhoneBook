@@ -1,0 +1,13 @@
+<div class="row contact-item" id={{item.id}}>
+  <div class="col-sm-12" (click)="selectContact($event.target)">
+    <div class="item" (click)="selectContact($event.target.parentNode)">
+      <h4>{{item.fio}}</h4>
+    </div>
+    <div class="item-button">
+      <button type="button" class="btn btn-outline-secondary edit-contact"
+        (click)="editContact($event.target)">Edit</button>
+      <button type="button" class="btn btn-outline-secondary remove-contact"
+        (click)="removeContact($event.target)">Delete</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div *ngIf="contactInfo">
+  <div class="contact-general-inf">
+    <div class="contact-photo"></div>
+  </div>
+  <div class="contact-inf">
+    <ul class="list-group">
+      <li class="list-group-item active">
+        <h4>{{contactInfo.fio}}</h4>
+      </li>
+      <li class="list-group-item" *ngFor="let phone of contactInfo.phone"><b>Phone: </b>{{phone.number}}</li>
+      <li class="list-group-item"><b>E-mail: </b>{{contactInfo.email}}</li>
+      <li class="list-group-item"><b>Birthday: </b>{{contactInfo.birthday | date: 'dd.MM.yyyy'}}</li>
+    </ul>
+  </div>
+</div>
